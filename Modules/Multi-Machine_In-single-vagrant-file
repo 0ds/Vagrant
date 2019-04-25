@@ -1,0 +1,48 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+#VM-1==========================================
+  config.vm.define "server1" do |vm1|
+    vm1.vm.hostname = "server1"
+    vm1.vm.box = "centos/7"
+    # vm1.vm.box_check_update = false
+    # vm1.vm.network "forwarded_port", guest: 80, host: 8080
+    # vm1.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    vm1.vm.network "private_network", ip: "192.168.33.10"
+    # vm1.vm.network "public_network"
+    # vm1.vm.synced_folder "data", "/vagrant_data"
+ 
+    vm1.vm.provider "qemu" do |vb|
+      vb.name = "server1"
+      vb.gui = false
+      vb.memory = "1024"
+    end
+
+    vm1.vm.provision "shell", run: "always", inline: <<-SHELL
+        echo "Hello from Server1 VM"
+    SHELL
+  end
+
+#VM-2===========================================
+  config.vm.define "server2" do |vm2|
+    vm2.vm.hostname = "server2"
+    vm2.vm.box = "centos/7"
+    # vm2.vm.box_check_update = false
+    # vm2.vm.network "forwarded_port", guest: 80, host: 8080
+    # vm2.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    vm2.vm.network "private_network", ip: "192.168.33.11"
+    # vm2.vm.network "public_network"
+    # vm2.vm.synced_folder "data", "/vagrant_data"
+    
+    vm2.vm.provider "qemu" do |vb|
+      vb.name = "server1"
+      vb.gui = false
+      vb.memory = "1024"
+    end
+
+    vm2.vm.provision "shell", run: "always", inline: <<-SHELL
+        echo "Hello from Server2 VM"
+    SHELL
+  end
+end

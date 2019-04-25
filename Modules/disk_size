@@ -1,0 +1,9 @@
+# vagrant plugin install vagrant-disksize      -----------> we need this plugin 1st
+
+and use the following in your Vagrantfile:
+------------------------------------------------
+vagrant.configure('2') do |config|              |
+    config.vm.box = 'ubuntu/xenial64'           |
+    config.disksize.size = '50GB'               |
+end                                             |
+------------------------------------------------

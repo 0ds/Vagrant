@@ -1,2 +1,8 @@
 URL:- 
           http://zacklalanne.me/using-vagrant-to-virtualize-multiple-hard-drives/
+
+
+          1.) https://docswiki.newro.co/index.php/Virtual_Box_commands
+          2.) https://www.openattic.org/posts/how-to-create-a-vagrant-vm-from-a-libvirt-vmimage/
+          3.) https://www.ibm.com/support/knowledgecenter/en/linuxonibm/com.ibm.linux.z.ldva/ldva_r_qemu-imgCommand.html
+          4.) https://stackoverflow.com/questions/21050496/vagrant-virtualbox-second-disk-path

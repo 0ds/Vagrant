@@ -1,7 +1,16 @@
 URL:-
         https://www.vagrantup.com/docs/virtualbox/configuration.html
 
-
+CUP-cores:-
+============
+config.vm.provider :virtualbox do |vb|
+  #   # Don't boot with headless mode
+  #   vb.gui = true
+  #
+  #   # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "2"]
+end
+---------------------
 
 Configuration
 

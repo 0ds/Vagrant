@@ -1,0 +1,3 @@
+URL: https://www.vagrantup.com/docs/cli/box.html
+
+# vagrant box add --name centos/7-320mb http://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7-x86_64-Vagrant-1711_01.VirtualBox.box
